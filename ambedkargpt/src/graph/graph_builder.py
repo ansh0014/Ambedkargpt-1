@@ -1,4 +1,4 @@
-# src/graph/graph_builder.py
+
 
 import json
 import pickle
@@ -27,7 +27,7 @@ class KnowledgeGraphBuilder:
             entities = chunk.get("entities", [])
             chunk_id = chunk.get("chunk_id")
 
-            # Add entity nodes
+           
             for ent in entities:
                 node_id = ent["text"]
 
@@ -40,7 +40,7 @@ class KnowledgeGraphBuilder:
 
                 self.graph.nodes[node_id]["chunks"].add(chunk_id)
 
-            # Add edges between co-occurring entities
+            
             for i in range(len(entities)):
                 for j in range(i + 1, len(entities)):
                     e1 = entities[i]["text"]
@@ -71,9 +71,7 @@ class KnowledgeGraphBuilder:
         )
 
 
-# -------------------------------
-# CLI entry point (for testing)
-# -------------------------------
+
 if __name__ == "__main__":
     with open("data/processed/chunks.json", "r", encoding="utf-8") as f:
         chunks = json.load(f)

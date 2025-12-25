@@ -1,4 +1,4 @@
-# src/chunking/semantic_chunker.py
+
 
 import json
 from pathlib import Path
@@ -10,7 +10,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 import tiktoken
 
-# Download required NLTK data
 nltk.download("punkt", quiet=True)
 nltk.download("punkt_tab", quiet=True)
 from nltk.tokenize import sent_tokenize
@@ -42,7 +41,7 @@ class SemanticChunker:
         self.embedder = SentenceTransformer(model_name)
         self.tokenizer = tiktoken.get_encoding("cl100k_base")
 
-    # 1. Load PDF
+   
     def load_pdf(self) -> List[str]:
         reader = PdfReader(self.pdf_path)
         pages = []
@@ -52,11 +51,11 @@ class SemanticChunker:
                 pages.append(text)
         return pages
 
-    # 2. Sentence splitting
+   
     def split_sentences(self, text: str) -> List[str]:
         return [s.strip() for s in sent_tokenize(text) if s.strip()]
 
-    # 3. Buffer merging
+
     def buffer_merge(self, sentences: List[str]) -> List[str]:
         merged = []
         for i in range(len(sentences)):
@@ -65,11 +64,11 @@ class SemanticChunker:
             merged.append(" ".join(sentences[start:end]))
         return merged
 
-    # 4. Token count
+    
     def count_tokens(self, text: str) -> int:
         return len(self.tokenizer.encode(text))
 
-    # 5. Semantic chunking using cosine similarity
+   
     def semantic_chunk(self, sentences: List[str]) -> List[str]:
         buffered = self.buffer_merge(sentences)
         embeddings = self.embedder.encode(buffered)
@@ -93,7 +92,7 @@ class SemanticChunker:
 
         return chunks
 
-    # 6. Enforce token limits
+    
     def split_large_chunks(self, chunks: List[str]) -> List[str]:
         final_chunks = []
 
@@ -110,7 +109,7 @@ class SemanticChunker:
 
         return final_chunks
 
-    # 7. Full pipeline
+   
     def run(self):
         pages = self.load_pdf()
         all_chunks = []

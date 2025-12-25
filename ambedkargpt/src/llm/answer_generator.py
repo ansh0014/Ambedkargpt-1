@@ -1,4 +1,4 @@
-# src/llm/answer_generator.py
+
 
 from src.llm.llm_client import LLMClient
 from src.llm.prompt_templates import build_prompt
@@ -30,7 +30,7 @@ class AnswerGenerator:
                 unique_chunks.append(c)
                 seen.add(c["chunk_id"])
 
-        # Take top chunks
+       
         selected_chunks = unique_chunks[:max_chunks]
 
         prompt = build_prompt(query, selected_chunks)

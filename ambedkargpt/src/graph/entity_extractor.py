@@ -1,4 +1,4 @@
-# src/graph/entity_extractor.py
+
 
 import json
 from typing import List, Dict
@@ -20,7 +20,7 @@ class EntityExtractor:
     ):
         self.nlp = spacy.load(model_name)
 
-        # Limit entity types to keep graph clean and meaningful
+       
         self.allowed_labels = allowed_labels or [
             "PERSON",
             "ORG",
@@ -68,9 +68,7 @@ class EntityExtractor:
         print(f"[OK] Extracted entities for {len(chunks)} chunks")
 
 
-# -------------------------------
-# CLI entry point (for testing)
-# -------------------------------
+
 if __name__ == "__main__":
     extractor = EntityExtractor()
     extractor.process_chunks(

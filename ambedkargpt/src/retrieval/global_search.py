@@ -1,4 +1,4 @@
-# src/retrieval/global_search.py
+
 
 import json
 import pickle
@@ -100,9 +100,8 @@ class GlobalGraphRAGSearch:
         return candidate_chunks[: self.top_k_chunks]
 
 
-# -------------------------------
-# CLI entry point (for testing)
-# -------------------------------
+
+
 if __name__ == "__main__":
     searcher = GlobalGraphRAGSearch(
         graph_path="data/processed/knowledge_graph.pkl",

@@ -1,4 +1,4 @@
-# src/graph/community_detector.py
+
 
 import pickle
 from pathlib import Path
@@ -22,7 +22,7 @@ class CommunityDetector:
             self.graph = pickle.load(f)
 
     def detect_communities(self):
-        # Convert NetworkX → iGraph
+        
         nx_graph = self.graph
         ig_graph = ig.Graph.TupleList(
             nx_graph.edges(),
@@ -34,7 +34,7 @@ class CommunityDetector:
             leidenalg.ModularityVertexPartition
         )
 
-        # Assign community IDs back to NetworkX graph
+       
         for idx, community_id in enumerate(partition.membership):
             node = ig_graph.vs[idx]["name"]
             self.graph.nodes[node]["community_id"] = community_id

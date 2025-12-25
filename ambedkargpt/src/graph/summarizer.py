@@ -1,4 +1,4 @@
-# src/graph/summarizer.py
+
 
 import pickle
 from collections import defaultdict
@@ -34,7 +34,7 @@ class CommunitySummarizer:
         summaries = {}
 
         for cid, texts in communities.items():
-            context = "\n".join(texts[:5])  # limit context
+            context = "\n".join(texts[:5])  
             prompt = f"""
 Summarize the following content into a concise thematic summary:
 

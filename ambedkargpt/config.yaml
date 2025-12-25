@@ -1,8 +1,4 @@
-# ==============================
-# AmbedkarGPT – SemRAG Config
-# ==============================
 
-# -------- Chunking --------
 chunking:
   max_chunk_tokens: 300
   overlap_sentences: 1
