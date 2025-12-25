@@ -1,0 +1,13 @@
+pypdf
+sentence-transformers
+scikit-learn
+nltk
+tiktoken
+spacy
+networkx
+python-louvain
+ollama
+langchain
+leidenalg
+igraph
+pytest

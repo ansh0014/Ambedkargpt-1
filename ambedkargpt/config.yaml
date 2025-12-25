@@ -1,0 +1,33 @@
+# ==============================
+# AmbedkarGPT – SemRAG Config
+# ==============================
+
+# -------- Chunking --------
+chunking:
+  max_chunk_tokens: 300
+  overlap_sentences: 1
+
+# -------- Embeddings --------
+embedding:
+  model_name: all-MiniLM-L6-v2
+
+# -------- Local Graph RAG (Eq. 4) --------
+local_search:
+  entity_similarity_threshold: 0.3
+  chunk_similarity_threshold: 0.25
+  top_k_chunks: 5
+
+# -------- Global Graph RAG (Eq. 5) --------
+global_search:
+  top_k_communities: 3
+  top_k_chunks: 5
+
+# -------- LLM --------
+llm:
+  provider: ollama
+  model_name: mistral:latest
+
+# -------- Paths --------
+paths:
+  chunks: data/processed/chunks.json
+  knowledge_graph: data/processed/knowledge_graph.pkl

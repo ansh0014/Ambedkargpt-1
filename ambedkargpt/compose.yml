@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  ambedkargpt:
+    build: .
+    container_name: ambedkargpt
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:
