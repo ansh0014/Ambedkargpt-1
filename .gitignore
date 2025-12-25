@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Generated data
+data/processed/
+data/processed/chunks.json
+data/processed/knowledge_graph.pkl
