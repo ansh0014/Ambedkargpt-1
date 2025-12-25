@@ -206,8 +206,20 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-
-# Generated data
+# AmbedkarGPT Generated Data Files
+# All processed data outputs from the pipeline
 data/processed/
+data/processed/*.json
+data/processed/*.pkl
+data/processed/*.csv
 data/processed/chunks.json
+data/processed/entities.json
+data/processed/graph.json
+data/processed/communities.json
+data/processed/summaries.json
 data/processed/knowledge_graph.pkl
+data/processed/*.graphml
+
+# Large PDF files (optional - uncomment if you don't want to commit PDFs)
+# data/*.pdf
+# data/Ambedkar_book.pdf
