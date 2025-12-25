@@ -33,10 +33,11 @@ graph TB
     N --> O[LLM Answer Generator]
     O --> P[Final Answer]
     
-    style B fill:#e1f5ff
-    style E fill:#e1f5ff
-    style F fill:#e1f5ff
-    style O fill:#ffe1e1
+    style B fill:#0066cc,stroke:#000,stroke-width:3px,color:#fff
+    style E fill:#0066cc,stroke:#000,stroke-width:3px,color:#fff
+    style F fill:#0066cc,stroke:#000,stroke-width:3px,color:#fff
+    style O fill:#cc0000,stroke:#000,stroke-width:3px,color:#fff
+    style K fill:#ff9900,stroke:#000,stroke-width:3px,color:#000
 ```
 
 ---
