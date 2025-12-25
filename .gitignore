@@ -208,17 +208,13 @@ __marimo__/
 
 # AmbedkarGPT Generated Data Files
 # All processed data outputs from the pipeline
-data/processed/
-data/processed/*.json
-data/processed/*.pkl
-data/processed/*.csv
-data/processed/chunks.json
-data/processed/entities.json
-data/processed/graph.json
-data/processed/communities.json
-data/processed/summaries.json
-data/processed/knowledge_graph.pkl
-data/processed/*.graphml
+# AmbedkarGPT Generated Data Files
+# All processed data outputs from the pipeline
+ambedkargpt/data/processed/
+ambedkargpt/data/processed/*.json
+ambedkargpt/data/processed/*.pkl
+ambedkargpt/data/processed/*.csv
+ambedkargpt/data/processed/*.graphml
 
 # Large PDF files (optional - uncomment if you don't want to commit PDFs)
 # data/*.pdf
