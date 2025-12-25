@@ -4,7 +4,7 @@ import pickle
 from collections import defaultdict
 
 from src.llm.llm_client import LLMClient
-
+MAX_COMMUNITIES_TO_SUMMARIZE = 4
 
 class CommunitySummarizer:
     """
@@ -33,7 +33,7 @@ class CommunitySummarizer:
 
         summaries = {}
 
-        for cid, texts in communities.items():
+        for cid, texts in list(communities.items())[:MAX_COMMUNITIES_TO_SUMMARIZE]:
             context = "\n".join(texts[:5])  
             prompt = f"""
 Summarize the following content into a concise thematic summary:
@@ -45,3 +45,17 @@ Summary:
             summaries[cid] = self.llm.generate(prompt)
 
         return summaries
+
+if __name__ == "__main__":
+    summarizer = CommunitySummarizer(
+        graph_path="data/processed/knowledge_graph.pkl",
+        chunks_path="data/processed/chunks.json",
+        model="mistral:latest"
+    )
+
+    summaries = summarizer.summarize()
+
+    print(f"[OK] Generated summaries for {len(summaries)} communities")
+
+   
+
